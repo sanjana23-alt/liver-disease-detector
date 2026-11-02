@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liver disease detector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Liver disease detector</h1>
+    <p class="lead">Enter the values from a routine liver blood test. The model compares them with 583 patient records and estimates how closely the pattern matches people diagnosed with liver disease.</p>
+
+    <div class="layout">
+      <section class="card">
+        <h2>Blood test values</h2>
+        <div class="grid" id="fields"></div>
+        <div class="row">
+          <button class="main" id="go" type="button">Check result</button>
+          <button type="button" id="ex1">Example: likely patient</button>
+          <button type="button" id="ex2">Example: likely healthy</button>
+        </div>
+      </section>
+
+      <section class="card" aria-live="polite">
+        <h2>Result</h2>
+        <p id="empty" class="note">Fill in the values and select Check result.</p>
+        <div id="res" hidden>
+          <div class="big" id="pct"></div>
+          <div class="band" id="band"></div>
+          <div class="meter"><i id="pin"></i></div>
+          <div class="scale"><span>Lower</span><span>Higher</span></div>
+          <h3>What moved the estimate</h3>
+          <ul id="why"></ul>
+        </div>
+        <p class="warn">For education only. This research model is not medical advice or a diagnosis. Please see a doctor about any health concern.</p>
+      </section>
+    </div>
+
+    <p class="note" id="info"></p>
+  </main>
+
+  <script src="model.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
